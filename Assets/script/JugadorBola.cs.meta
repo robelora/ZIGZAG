@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 14049b2e838f4a24caac8d76b96d34b8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - camara: {instanceID: 0}
+  - suelo: {fileID: 5448605174476095571, guid: 4eaa121e5278c884cacccf21e21f49cb, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
