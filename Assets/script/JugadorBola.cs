@@ -8,8 +8,9 @@ public class JugadorBola : MonoBehaviour
     // Start is called before the first frame update
     public Camera camara;
     public GameObject suelo;
+    public GameObject meta;
     public float velocidad=7.0f;
-
+    public int nsuelos=0, totalsuelos=0,boolmeta=0;
 
     private Vector3 offSet;
     private float ValX=0.0f, ValZ = 0.0f;
@@ -52,24 +53,49 @@ public class JugadorBola : MonoBehaviour
     }
 
     private void OnCollisionExit(Collision other){
-        if(other.gameObject.tag =="suelo"){
+        if(other.gameObject.tag =="suelo" && totalsuelos<20){
             StartCoroutine(BorrarSuelo(other.gameObject));
         }
+        if(other.gameObject.tag=="suelo" && totalsuelos==20){
+           StartCoroutine(LlegadaMeta());
+             
+        }
+    }
+    IEnumerator LlegadaMeta(){
+        if(boolmeta==0){
+            boolmeta=1;
+            meta.gameObject.SetActive(true);
+            float aleatorio= Random.Range(0.0f, 1.0f);
+            if(aleatorio>0.5f)
+                ValX += 6.0f;
+            else
+                ValZ += 6.0f;
+            Instantiate(meta, new Vector3(ValX,0.1f,ValZ), Quaternion.identity);
+            yield return new WaitForSeconds(1.5f);
+            Time.timeScale= 0f;
+        }
+        
+        
     }
 
+
     IEnumerator BorrarSuelo(GameObject suelo){
-        float aleatorio= Random.Range(0.0f, 1.0f);
-        if(aleatorio>0.5f)
-            ValX += 6.0f;
-        else
-            ValZ += 6.0f;
+        if(nsuelos<11 && totalsuelos!=20){
+            float aleatorio= Random.Range(0.0f, 1.0f);
+            if(aleatorio>0.5f)
+                ValX += 6.0f;
+            else
+                ValZ += 6.0f;
 
-        Instantiate(suelo, new Vector3(ValX,0,ValZ), Quaternion.identity);
-        yield return new WaitForSeconds(2);  
-        suelo.gameObject.GetComponent<Rigidbody>().isKinematic=false;
-        suelo.gameObject.GetComponent<Rigidbody>().useGravity=true;
-        yield return new WaitForSeconds(2);
-        Destroy(suelo);
-
+            Instantiate(suelo, new Vector3(ValX,0,ValZ), Quaternion.identity);
+            nsuelos++;
+            yield return new WaitForSeconds(2);  
+            suelo.gameObject.GetComponent<Rigidbody>().isKinematic=false;
+            suelo.gameObject.GetComponent<Rigidbody>().useGravity=true;
+            yield return new WaitForSeconds(2);
+            Destroy(suelo);
+            nsuelos--;
+            totalsuelos++;
+        }
     }
 }
