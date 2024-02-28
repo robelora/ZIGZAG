@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 public class JugadorBola : MonoBehaviour
-{
+{   
     // Start is called before the first frame update
     public Camera camara;
     public GameObject suelo;
