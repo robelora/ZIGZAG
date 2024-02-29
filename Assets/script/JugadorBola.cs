@@ -67,7 +67,7 @@ public class JugadorBola : MonoBehaviour
             meta.gameObject.SetActive(true);
             float aleatorio= Random.Range(0.0f, 1.0f);
             if(aleatorio>0.5f)
-                ValX += 6.0f;
+                ValX += 4.0f;
             else
                 ValZ += 6.0f;
             Instantiate(meta, new Vector3(ValX,0.1f,ValZ), Quaternion.identity);
@@ -83,16 +83,16 @@ public class JugadorBola : MonoBehaviour
         if(nsuelos<11 && totalsuelos!=20){
             float aleatorio= Random.Range(0.0f, 1.0f);
             if(aleatorio>0.5f)
-                ValX += 6.0f;
+                ValX += 4.0f;
             else
                 ValZ += 6.0f;
 
             Instantiate(suelo, new Vector3(ValX,0,ValZ), Quaternion.identity);
             nsuelos++;
-            yield return new WaitForSeconds(2);  
+            yield return new WaitForSeconds(1);  
             suelo.gameObject.GetComponent<Rigidbody>().isKinematic=false;
             suelo.gameObject.GetComponent<Rigidbody>().useGravity=true;
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             Destroy(suelo);
             nsuelos--;
             totalsuelos++;

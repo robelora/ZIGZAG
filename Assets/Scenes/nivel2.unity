@@ -661,6 +661,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1784429341298389704, guid: 7dd33960346df824eb75cdfbe925e61e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784429341298389704, guid: 7dd33960346df824eb75cdfbe925e61e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784429341298389704, guid: 7dd33960346df824eb75cdfbe925e61e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784429341298389704, guid: 7dd33960346df824eb75cdfbe925e61e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -700,9 +712,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1784429341298389704, guid: 7dd33960346df824eb75cdfbe925e61e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4174783388397086702, guid: 7dd33960346df824eb75cdfbe925e61e, type: 3}
       propertyPath: m_Name
       value: suelo2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174783388397086702, guid: 7dd33960346df824eb75cdfbe925e61e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
