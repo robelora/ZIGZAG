@@ -17,9 +17,13 @@ public class JugadorBola : MonoBehaviour
     private int miPuntuacion = 0;
     [SerializeField] private TMP_Text textoPuntuacion;
     [SerializeField] private TMP_Text textoPuntuacionTotal; //para asgnar el valor de la puntuacion total de la pantalla del gameover!
+    
 
+    [SerializeField] private GameObject estrella;
+    private int aleatorio2;
     void Start()
-    {
+    {       
+        
         offSet = camara.transform.position - transform.position;
         CrearSueloInicial();
         DireccionActual = Vector3.forward;
@@ -44,7 +48,13 @@ public class JugadorBola : MonoBehaviour
             if(cont == 10){
                 break;
             }
+            
         }
+        aleatorio2 = Random.Range(0, 5); // 25% de la sveces que salga
+            if(aleatorio2 <1){
+                estrella.SetActive(true);
+                Instantiate(estrella, new Vector3(ValX,1,ValZ), Quaternion.identity);          
+            }
     }
 
     void CambiarDireccion(){
@@ -99,6 +109,7 @@ public class JugadorBola : MonoBehaviour
             Destroy(suelo);
             nsuelos--;
             totalsuelos++;
+            
         }
     }
     void SumarPuntuacion(){
