@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 
 public class JugadorBola : MonoBehaviour
 {   
@@ -10,11 +10,13 @@ public class JugadorBola : MonoBehaviour
     public GameObject suelo;
     public GameObject meta;
     public float velocidad=7.0f;
-    public int nsuelos=0, totalsuelos=0,boolmeta=0;
-
+    public int nsuelos=0, totalsuelos=0,boolmeta=0,booljuego=0;
     private Vector3 offSet;
     private float ValX=0.0f, ValZ = 0.0f;
     private Vector3 DireccionActual;
+    private int miPuntuacion = 0;
+    [SerializeField] private TMP_Text textoPuntuacion;
+    [SerializeField] private TMP_Text textoPuntuacionTotal; //para asgnar el valor de la puntuacion total de la pantalla del gameover!
 
     void Start()
     {
@@ -33,6 +35,7 @@ public class JugadorBola : MonoBehaviour
     }
 
     void CrearSueloInicial(){
+        booljuego=1;
         int cont = 0;
         for(int i=0;i<3;i++){
             cont++;
@@ -49,7 +52,7 @@ public class JugadorBola : MonoBehaviour
             DireccionActual=Vector3.right;
         else
             DireccionActual=Vector3.forward;
-        
+        SumarPuntuacion();   
     }
 
     private void OnCollisionExit(Collision other){
@@ -97,5 +100,11 @@ public class JugadorBola : MonoBehaviour
             nsuelos--;
             totalsuelos++;
         }
+    }
+    void SumarPuntuacion(){
+        miPuntuacion++;
+        textoPuntuacion.text = miPuntuacion.ToString();
+        textoPuntuacionTotal.text = textoPuntuacion.text;
+
     }
 }
