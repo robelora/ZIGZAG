@@ -138,15 +138,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4608378464749373115, guid: 883ee3ab571ad244b9e67d9a4c7a92eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.19808576
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 4608378464749373115, guid: 883ee3ab571ad244b9e67d9a4c7a92eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.624466
+      value: 11.1
       objectReference: {fileID: 0}
     - target: {fileID: 4608378464749373115, guid: 883ee3ab571ad244b9e67d9a4c7a92eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.009969
+      value: -11.8
       objectReference: {fileID: 0}
     - target: {fileID: 4608378464749373115, guid: 883ee3ab571ad244b9e67d9a4c7a92eb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -937,7 +937,6 @@ MonoBehaviour:
   nsuelos: 0
   totalsuelos: 0
   boolmeta: 0
-  booljuego: 0
   textoPuntuacion: {fileID: 1206403941}
   textoPuntuacionTotal: {fileID: 0}
   estrella: {fileID: 0}
@@ -968,12 +967,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3150398850932327502, guid: 0d354562ff3df6547b1cf18faf84ecf6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150398850932327502, guid: 0d354562ff3df6547b1cf18faf84ecf6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150398850932327502, guid: 0d354562ff3df6547b1cf18faf84ecf6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150398850932327502, guid: 0d354562ff3df6547b1cf18faf84ecf6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.87535644
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 3150398850932327502, guid: 0d354562ff3df6547b1cf18faf84ecf6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3
+      value: -3.39
       objectReference: {fileID: 0}
     - target: {fileID: 3150398850932327502, guid: 0d354562ff3df6547b1cf18faf84ecf6, type: 3}
       propertyPath: m_LocalPosition.z

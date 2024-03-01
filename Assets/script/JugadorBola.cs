@@ -10,14 +10,14 @@ public class JugadorBola : MonoBehaviour
     public GameObject suelo;
     public GameObject meta;
     public float velocidad=7.0f;
-    public int nsuelos=0, totalsuelos=0,boolmeta=0,booljuego=0;
+    public int nsuelos=0, totalsuelos=0,boolmeta=0;
     private Vector3 offSet;
     private float ValX=0.0f, ValZ = 0.0f;
     private Vector3 DireccionActual;
     private int miPuntuacion = 0;
     [SerializeField] private TMP_Text textoPuntuacion;
     [SerializeField] private TMP_Text textoPuntuacionTotal; //para asgnar el valor de la puntuacion total de la pantalla del gameover!
-    
+    [SerializeField] private ParticleSystem particulas;
 
     [SerializeField] private GameObject estrella;
     private int aleatorio2;
@@ -39,22 +39,17 @@ public class JugadorBola : MonoBehaviour
     }
 
     void CrearSueloInicial(){
-        booljuego=1;
+        
         int cont = 0;
         for(int i=0;i<3;i++){
             cont++;
             ValZ += 6.0f;
             Instantiate(suelo, new Vector3(ValX,0,ValZ), Quaternion.identity);
-            if(cont == 10){
-                break;
-            }
             
+                       
         }
-        aleatorio2 = Random.Range(0, 5); // 25% de la sveces que salga
-            if(aleatorio2 <1){
-                estrella.SetActive(true);
-                Instantiate(estrella, new Vector3(ValX,1,ValZ), Quaternion.identity);          
-            }
+          
+        
     }
 
     void CambiarDireccion(){
@@ -102,6 +97,13 @@ public class JugadorBola : MonoBehaviour
 
             Instantiate(suelo, new Vector3(ValX,0,ValZ), Quaternion.identity);
             nsuelos++;
+           float probabilidad = Random.value; // Genera un número aleatorio entre 0 y 1
+
+            if (probabilidad <= 0.1f) { // Si la probabilidad es menor o igual a 0.1(10%)
+                float aleatorioValorX = Random.Range(1.0f, 2.0f);
+                estrella.SetActive(true);
+                Instantiate(estrella, new Vector3(aleatorioValorX+ValX, 1.0f, ValZ), estrella.transform.rotation);   
+            }
             yield return new WaitForSeconds(1);  
             suelo.gameObject.GetComponent<Rigidbody>().isKinematic=false;
             suelo.gameObject.GetComponent<Rigidbody>().useGravity=true;
@@ -109,6 +111,7 @@ public class JugadorBola : MonoBehaviour
             Destroy(suelo);
             nsuelos--;
             totalsuelos++;
+          
             
         }
     }
@@ -118,4 +121,12 @@ public class JugadorBola : MonoBehaviour
         textoPuntuacionTotal.text = textoPuntuacion.text;
 
     }
+    void OnTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("coin")){
+            miPuntuacion = miPuntuacion + 10;
+            Destroy(other.gameObject);
+            particulas.Play();
+            }
+        }
+    
 }
