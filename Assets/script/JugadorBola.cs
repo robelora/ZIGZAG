@@ -18,7 +18,6 @@ public class JugadorBola : MonoBehaviour
     [SerializeField] private TMP_Text textoPuntuacion;
     [SerializeField] private TMP_Text textoPuntuacionTotal; //para asgnar el valor de la puntuacion total de la pantalla del gameover!
     [SerializeField] private ParticleSystem particulas;
-
     [SerializeField] private GameObject estrella;
     private int aleatorio2;
     void Start()
@@ -75,7 +74,7 @@ public class JugadorBola : MonoBehaviour
             meta.gameObject.SetActive(true);
             float aleatorio= Random.Range(0.0f, 1.0f);
             if(aleatorio>0.5f)
-                ValX += 4.0f;
+                ValX += 3.0f;
             else
                 ValZ += 6.0f;
             Instantiate(meta, new Vector3(ValX,0.1f,ValZ), Quaternion.identity);
@@ -91,7 +90,7 @@ public class JugadorBola : MonoBehaviour
         if(nsuelos<11 && totalsuelos!=20){
             float aleatorio= Random.Range(0.0f, 1.0f);
             if(aleatorio>0.5f)
-                ValX += 4.0f;
+                ValX += 3.0f;
             else
                 ValZ += 6.0f;
 
@@ -123,9 +122,11 @@ public class JugadorBola : MonoBehaviour
     }
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("coin")){
+            //particulas.SetActive(true);
+            particulas.Play();
             miPuntuacion = miPuntuacion + 10;
             Destroy(other.gameObject);
-            particulas.Play();
+            
             }
         }
     
