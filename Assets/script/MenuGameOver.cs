@@ -13,23 +13,32 @@ public class MenuGameOver : MonoBehaviour
 
     private void Start()
 {
-    GameObject jugadorObject = GameObject.FindGameObjectWithTag("jugador");
-    if (jugadorObject != null)
-    {
-        jugadorbola = jugadorObject.GetComponent<JugadorBola>();
-        jugadorbola.MuerteJugador += ActivarMenu;
+    if(SceneManager.GetActiveScene().name=="Nivel1"){
+        GameObject jugadorObject1 = GameObject.FindGameObjectWithTag("jugador");
+         if (jugadorObject1 != null)
+        {
+            jugadorbola = jugadorObject1.GetComponent<JugadorBola>();
+            jugadorbola.MuerteJugador += ActivarMenu;
+        }
     }
-    GameObject jugadorObject = GameObject.FindGameObjectWithTag("jugador");
-    if (jugadorObject != null)
-    {
-        jugadorbola2 = jugadorObject.GetComponent<JugadorBola2>();
-        jugadorbola2.MuerteJugador += ActivarMenu;
+
+    if(SceneManager.GetActiveScene().name=="nivel2"){
+        GameObject jugadorObject2 = GameObject.FindGameObjectWithTag("jugador");
+         if (jugadorObject2 != null)
+        {
+            jugadorbola2 = jugadorObject2.GetComponent<JugadorBolaNivel2>();
+            jugadorbola2.MuerteJugador += ActivarMenu;
+        }
     }
-    GameObject jugadorObject = GameObject.FindGameObjectWithTag("jugador");
-    if (jugadorObject != null)
-    {
-        jugadorbola3 = jugadorObject.GetComponent<JugadorBola3>();
-        jugadorbola3.MuerteJugador += ActivarMenu;
+
+    if(SceneManager.GetActiveScene().name=="nivel 3"){
+        GameObject jugadorObject3 = GameObject.FindGameObjectWithTag("jugador");
+         if (jugadorObject3 != null)
+        {
+            jugadorbola3 = jugadorObject3.GetComponent<JugadorBolaNivel3>();
+            jugadorbola3.MuerteJugador += ActivarMenu;
+        }
+
     }
 }
 

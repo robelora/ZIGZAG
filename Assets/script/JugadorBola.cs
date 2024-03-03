@@ -71,7 +71,6 @@ public class JugadorBola : MonoBehaviour
             StartCoroutine(BorrarSuelo(other.gameObject));
         }
         if(other.gameObject.tag=="suelo" && totalsuelos==50){
-           //StartCoroutine(LlegadaMeta());
            LlegadaMeta();    
         }
         if(other.gameObject.tag=="meta"){
@@ -88,9 +87,7 @@ public class JugadorBola : MonoBehaviour
             else
                 ValZ += 6.0f;
             Instantiate(meta, new Vector3(ValX,0.1f,ValZ), Quaternion.identity);
-            //yield return new WaitForSeconds(1.5f);
-        }
-             
+        }      
     }
 
     IEnumerator BorrarSuelo(GameObject suelo){
@@ -131,7 +128,6 @@ public class JugadorBola : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("coin")){
-            //particulas.SetActive(true);
             particulas.Play();
             miPuntuacion = miPuntuacion + 10;
             Destroy(other.gameObject);

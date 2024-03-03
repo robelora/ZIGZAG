@@ -52,12 +52,8 @@ public class JugadorBolaNivel2 : MonoBehaviour
         for(int i=0;i<3;i++){
             cont++;
             ValZ += 6.0f;
-            Instantiate(suelo, new Vector3(ValX,0,ValZ), Quaternion.identity);
-            
-                       
+            Instantiate(suelo, new Vector3(ValX,0,ValZ), Quaternion.identity);             
         }
-          
-        
     }
 
     void CambiarDireccion(){
@@ -73,27 +69,24 @@ public class JugadorBolaNivel2 : MonoBehaviour
             StartCoroutine(BorrarSuelo(other.gameObject));
         }
         if(other.gameObject.tag=="suelo" && totalsuelos==20){
-           StartCoroutine(LlegadaMeta());
-             
+            LlegadaMeta();    
+        }
+        if(other.gameObject.tag=="meta"){
+           Time.timeScale= 0f;
         }
     }
-    IEnumerator LlegadaMeta(){
+    void LlegadaMeta(){
         if(boolmeta==0){
             boolmeta=1;
             meta.gameObject.SetActive(true);
             float aleatorio= UnityEngine.Random.Range(0.0f, 1.0f);
             if(aleatorio>0.5f)
-                ValX += 4.0f;
+                ValX += 3.0f;
             else
                 ValZ += 6.0f;
             Instantiate(meta, new Vector3(ValX,0.1f,ValZ), Quaternion.identity);
-            yield return new WaitForSeconds(1.5f);
-            Time.timeScale= 0f;
-        }
-        
-        
+        }    
     }
-
 
     IEnumerator BorrarSuelo(GameObject suelo){
         if(nsuelos<11 && totalsuelos!=20){
@@ -131,7 +124,6 @@ public class JugadorBolaNivel2 : MonoBehaviour
     }
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("coin")){
-            //particulas.SetActive(true);
             particulas.Play();
             miPuntuacion = miPuntuacion + 10;
             Destroy(other.gameObject);
