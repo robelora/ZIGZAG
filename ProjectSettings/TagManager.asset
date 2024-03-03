@@ -7,6 +7,8 @@ TagManager:
   - suelo
   - meta
   - suelo2
+  - coin
+  - jugador
   layers:
   - Default
   - TransparentFX
