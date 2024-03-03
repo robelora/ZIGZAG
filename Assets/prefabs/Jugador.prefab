@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7758217019794390312}
   - component: {fileID: 3718499122787742943}
   - component: {fileID: 1225991730019300686}
+  - component: {fileID: 671973972690821645}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -133,3 +134,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &671973972690821645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125456529563826986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c69593a7a91c94bb4bbf4ab4d8c3b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camara: {fileID: 0}
+  suelo: {fileID: 0}
+  meta: {fileID: 0}
+  velocidad: 7
+  nsuelos: 0
+  totalsuelos: 0
+  boolmeta: 0
+  textoPuntuacion: {fileID: 0}
+  textoPuntuacionTotal: {fileID: 0}
+  particulas: {fileID: 0}
+  estrella: {fileID: 0}

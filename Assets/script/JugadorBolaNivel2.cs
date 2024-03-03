@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class JugadorBola : MonoBehaviour
+public class JugadorBolaNivel2 : MonoBehaviour
 {   
     // Start is called before the first frame update
     public Camera camara;
@@ -76,7 +76,7 @@ public class JugadorBola : MonoBehaviour
             meta.gameObject.SetActive(true);
             float aleatorio= Random.Range(0.0f, 1.0f);
             if(aleatorio>0.5f)
-                ValX += 3.0f;
+                ValX += 4.0f;
             else
                 ValZ += 6.0f;
             Instantiate(meta, new Vector3(ValX,0.1f,ValZ), Quaternion.identity);
@@ -92,7 +92,7 @@ public class JugadorBola : MonoBehaviour
         if(nsuelos<11 && totalsuelos!=20){
             float aleatorio= Random.Range(0.0f, 1.0f);
             if(aleatorio>0.5f)
-                ValX += 3.0f;
+                ValX += 4.0f;
             else
                 ValZ += 6.0f;
 
@@ -100,7 +100,7 @@ public class JugadorBola : MonoBehaviour
             nsuelos++;
            float probabilidad = Random.value; // Genera un número aleatorio entre 0 y 1
 
-            if (probabilidad <= 0.1f) { // Si la probabilidad es menor o igual a 0.1(10%)
+            if (probabilidad <= 0.8f) { // Si la probabilidad es menor o igual a 0.1(10%)
                 float aleatorioValorX = Random.Range(1.0f, 2.0f);
                 estrella.SetActive(true);
                 Instantiate(estrella, new Vector3(aleatorioValorX+ValX, 1.0f, ValZ), estrella.transform.rotation);   
