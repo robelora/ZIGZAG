@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class JugadorBolaNivel2 : MonoBehaviour
 {   
@@ -11,6 +12,7 @@ public class JugadorBolaNivel2 : MonoBehaviour
     public GameObject meta;
     public float velocidad=7.0f;
     public int nsuelos=0, totalsuelos=0,boolmeta=0;
+    public event EventHandler MuerteJugador;
     private Vector3 offSet;
     private float ValX=0.0f, ValZ = 0.0f;
     private Vector3 DireccionActual;
@@ -37,6 +39,11 @@ public class JugadorBolaNivel2 : MonoBehaviour
             CambiarDireccion();
         }
         transform.Translate(DireccionActual*velocidad*Time.deltaTime);
+        if(transform.position.y<-15){ //si la bola cae, el jugador muere y sale el game over
+            MuerteJugador?.Invoke(this, EventArgs.Empty);
+            Destroy(gameObject);
+            Time.timeScale= 0f;
+        }
     }
 
     void CrearSueloInicial(){
@@ -74,7 +81,7 @@ public class JugadorBolaNivel2 : MonoBehaviour
         if(boolmeta==0){
             boolmeta=1;
             meta.gameObject.SetActive(true);
-            float aleatorio= Random.Range(0.0f, 1.0f);
+            float aleatorio= UnityEngine.Random.Range(0.0f, 1.0f);
             if(aleatorio>0.5f)
                 ValX += 4.0f;
             else
@@ -90,7 +97,7 @@ public class JugadorBolaNivel2 : MonoBehaviour
 
     IEnumerator BorrarSuelo(GameObject suelo){
         if(nsuelos<11 && totalsuelos!=20){
-            float aleatorio= Random.Range(0.0f, 1.0f);
+            float aleatorio= UnityEngine.Random.Range(0.0f, 1.0f);
             if(aleatorio>0.5f)
                 ValX += 4.0f;
             else
@@ -98,10 +105,10 @@ public class JugadorBolaNivel2 : MonoBehaviour
 
             Instantiate(suelo, new Vector3(ValX,0,ValZ), Quaternion.identity);
             nsuelos++;
-           float probabilidad = Random.value; // Genera un número aleatorio entre 0 y 1
+           float probabilidad = UnityEngine.Random.value; // Genera un número aleatorio entre 0 y 1
 
             if (probabilidad <= 0.8f) { // Si la probabilidad es menor o igual a 0.1(10%)
-                float aleatorioValorX = Random.Range(1.0f, 2.0f);
+                float aleatorioValorX = UnityEngine.Random.Range(1.0f, 2.0f);
                 estrella.SetActive(true);
                 Instantiate(estrella, new Vector3(aleatorioValorX+ValX, 1.0f, ValZ), estrella.transform.rotation);   
             }

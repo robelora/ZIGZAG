@@ -8,6 +8,8 @@ public class MenuGameOver : MonoBehaviour
 {
     [SerializeField] private GameObject menuGameOver;
     private JugadorBola jugadorbola;
+    private JugadorBolaNivel2 jugadorbola2;
+    private JugadorBolaNivel3 jugadorbola3;
 
     private void Start()
 {
@@ -16,6 +18,18 @@ public class MenuGameOver : MonoBehaviour
     {
         jugadorbola = jugadorObject.GetComponent<JugadorBola>();
         jugadorbola.MuerteJugador += ActivarMenu;
+    }
+    GameObject jugadorObject = GameObject.FindGameObjectWithTag("jugador");
+    if (jugadorObject != null)
+    {
+        jugadorbola2 = jugadorObject.GetComponent<JugadorBola2>();
+        jugadorbola2.MuerteJugador += ActivarMenu;
+    }
+    GameObject jugadorObject = GameObject.FindGameObjectWithTag("jugador");
+    if (jugadorObject != null)
+    {
+        jugadorbola3 = jugadorObject.GetComponent<JugadorBola3>();
+        jugadorbola3.MuerteJugador += ActivarMenu;
     }
 }
 

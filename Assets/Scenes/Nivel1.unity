@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -187,11 +187,43 @@ PrefabInstance:
       propertyPath: camara
       value: 
       objectReference: {fileID: 1866743309}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 671973972690821645, guid: 6c18d5fa952f69a4c981a32274f01091, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1125456529563826986, guid: 6c18d5fa952f69a4c981a32274f01091, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 48211227}
   m_SourcePrefab: {fileID: 100100000, guid: 6c18d5fa952f69a4c981a32274f01091, type: 3}
+--- !u!1 &48211226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1125456529563826986, guid: 6c18d5fa952f69a4c981a32274f01091, type: 3}
+  m_PrefabInstance: {fileID: 48211225}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &48211227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48211226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec49ac520212194889fffa06fe942bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camara: {fileID: 1866743309}
+  suelo: {fileID: 587581079}
+  meta: {fileID: 2703787233869705595}
+  velocidad: 7
+  nsuelos: 0
+  totalsuelos: 0
+  boolmeta: 0
+  textoPuntuacion: {fileID: 0}
+  textoPuntuacionTotal: {fileID: 0}
+  particulas: {fileID: 0}
+  estrella: {fileID: 0}
 --- !u!1 &587581079 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5448605174476095571, guid: 4eaa121e5278c884cacccf21e21f49cb, type: 3}
