@@ -20,6 +20,8 @@ public class JugadorBola : MonoBehaviour
     [SerializeField] private ParticleSystem particulas;
     [SerializeField] private GameObject estrella;
     private int aleatorio2;
+    
+
     void Start()
     {       
         
