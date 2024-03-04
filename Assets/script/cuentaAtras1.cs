@@ -18,7 +18,7 @@ public class cuentaAtras1 : MonoBehaviour
         imagen.gameObject.SetActive(true);
         boton.gameObject.SetActive(false);
 
-        StartCoroutine(PonerNumeros());
+        //StartCoroutine(PonerNumeros());
     
     }
     IEnumerator PonerNumeros(){

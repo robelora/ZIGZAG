@@ -18,10 +18,10 @@ public class cuentaAtras : MonoBehaviour
         imagen.gameObject.SetActive(true);
         boton.gameObject.SetActive(false);
 
-        StartCoroutine(PonerNumeros());
+        //StartCoroutine(PonerNumeros());
     
     }
-    IEnumerator PonerNumeros(){
+    /*IEnumerator PonerNumeros(){
         for(int i = 0;i< numeros.Length;i++){
             imagen.sprite = numeros[i];
             yield return new WaitForSeconds(1);
@@ -29,6 +29,7 @@ public class cuentaAtras : MonoBehaviour
         SceneManager.LoadScene("Nivel1");
     }
     // Update is called once per frame
+    */
     void Update()
     {
         

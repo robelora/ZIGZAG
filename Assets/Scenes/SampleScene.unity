@@ -577,14 +577,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: daf7dae7e5bc1ed48826bbe16ab73ca3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1191,7 +1191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8733579224686612748, guid: 04129d9cc1f64864dac3e786b9d93595, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5.2381897
+      value: 5.238159
       objectReference: {fileID: 0}
     - target: {fileID: 8733579224686612748, guid: 04129d9cc1f64864dac3e786b9d93595, type: 3}
       propertyPath: m_AnchoredPosition.y
