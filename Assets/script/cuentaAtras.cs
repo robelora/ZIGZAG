@@ -16,20 +16,12 @@ public class cuentaAtras : MonoBehaviour
     }
     void Empezar(){
         imagen.gameObject.SetActive(true);
-        boton.gameObject.SetActive(false);
+        //boton.gameObject.SetActive(false);
 
         //StartCoroutine(PonerNumeros());
+        //SceneManager.LoadScene("Nivel1");
+    }
     
-    }
-    /*IEnumerator PonerNumeros(){
-        for(int i = 0;i< numeros.Length;i++){
-            imagen.sprite = numeros[i];
-            yield return new WaitForSeconds(1);
-        }
-        SceneManager.LoadScene("Nivel1");
-    }
-    // Update is called once per frame
-    */
     void Update()
     {
         
