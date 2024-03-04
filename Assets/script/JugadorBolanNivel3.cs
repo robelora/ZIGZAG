@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 using System;
@@ -21,13 +22,14 @@ public class JugadorBolaNivel3 : MonoBehaviour
     [SerializeField] private TMP_Text textoPuntuacionTotal; //para asgnar el valor de la puntuacion total de la pantalla del gameover!
     [SerializeField] private ParticleSystem particulas;
     [SerializeField] private GameObject estrella;
+    [SerializeField] private GameObject menuGameOver;
     private int aleatorio2;
 
     
 
     void Start()
     {       
-        
+        Time.timeScale= 1f;
         offSet = camara.transform.position - transform.position;
         CrearSueloInicial();
         DireccionActual = Vector3.forward;
@@ -73,6 +75,8 @@ public class JugadorBolaNivel3 : MonoBehaviour
         }
         if(other.gameObject.tag=="meta"){
            Time.timeScale= 0f;
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+           
         }
     }
     void LlegadaMeta(){
@@ -84,10 +88,9 @@ public class JugadorBolaNivel3 : MonoBehaviour
                 ValX += 3.0f;
             else
                 ValZ += 6.0f;
-            Instantiate(meta, new Vector3(ValX,0.1f,ValZ), Quaternion.identity);
+            Instantiate(meta, new Vector3(ValX,-18.36f,ValZ), Quaternion.identity);
         }    
     }
-
 
     IEnumerator BorrarSuelo(GameObject suelo){
         if(nsuelos<11 && totalsuelos!=20){

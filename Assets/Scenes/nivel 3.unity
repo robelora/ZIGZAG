@@ -429,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8494473863214922937, guid: de407526f667386498093de9d1e21140, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -18.41
       objectReference: {fileID: 0}
     - target: {fileID: 8494473863214922937, guid: de407526f667386498093de9d1e21140, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6226,9 +6226,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1884705902801025234}
     - target: {fileID: 5864792914452120734, guid: 4c9dda7535aacff46a931fba6348e611, type: 3}
+      propertyPath: velocidad
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864792914452120734, guid: 4c9dda7535aacff46a931fba6348e611, type: 3}
       propertyPath: particulas
       value: 
       objectReference: {fileID: 1386608346}
+    - target: {fileID: 5864792914452120734, guid: 4c9dda7535aacff46a931fba6348e611, type: 3}
+      propertyPath: menuGameOver
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5864792914452120734, guid: 4c9dda7535aacff46a931fba6348e611, type: 3}
       propertyPath: textoPuntuacion
       value: 

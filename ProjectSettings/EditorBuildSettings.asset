@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/nivel 3.unity
     guid: dc5dd87565341b841974caa729158bd4
+  - enabled: 1
+    path: Assets/Scenes/gameovertyfp.unity
+    guid: 165e4c0e4ad98a740940764c0baa435f
   m_configObjects: {}
