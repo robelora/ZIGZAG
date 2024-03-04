@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 using System;
@@ -75,6 +76,7 @@ public class JugadorBola : MonoBehaviour
         }
         if(other.gameObject.tag=="meta"){
            Time.timeScale= 0f;
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     void LlegadaMeta(){

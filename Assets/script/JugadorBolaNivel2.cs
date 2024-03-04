@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 using System;
@@ -26,7 +27,7 @@ public class JugadorBolaNivel2 : MonoBehaviour
 
     void Start()
     {       
-        
+        Time.timeScale= 1f;
         offSet = camara.transform.position - transform.position;
         CrearSueloInicial();
         DireccionActual = Vector3.forward;
@@ -73,6 +74,7 @@ public class JugadorBolaNivel2 : MonoBehaviour
         }
         if(other.gameObject.tag=="meta"){
            Time.timeScale= 0f;
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     void LlegadaMeta(){
